@@ -51,4 +51,4 @@ RUN echo 'echo BTMHOST=$BTM_HOST:$BTM_PORT' >> /root/.bashrc && \
 # Expose Node Manager default port, and also default http/https ports for admin console
 EXPOSE 7001 5556 8453
 
-CMD ["bash"]
+CMD ["startWebLogic.sh"]
