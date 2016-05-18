@@ -5,10 +5,10 @@ MAINTAINER Henry Zhao (https://www.linkedin.com/in/dreamerhenry)
 USER root
 
 #default to use jdk 1.6
-ENV JAVA_HOME JAVA16_HOME
+ENV JAVA_HOME $JAVA16_HOME
 
 #Download tomcat+btm
-RUN perl gdown.pl 'https://docs.google.com/uc?export=download&id=0B-NEimEr29WdYUd2ejJDOERBakk' 'apache-tomcat-5.5.31.zip'
+RUN perl gdown.pl 'https://docs.google.com/uc?export=download&id=0B-NEimEr29WdS0ZXN2NlNlFhTHM' 'apache-tomcat-5.5.31.zip'
 
 RUN unzip apache-tomcat-5.5.31.zip -d /root/
 
