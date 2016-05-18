@@ -24,7 +24,7 @@ RUN perl gdown.pl 'https://docs.google.com/uc?export=download&id=0B-NEimEr29WddX
 RUN perl gdown.pl 'https://docs.google.com/uc?export=download&id=0B-NEimEr29WdZV9xRXhfSGZfUWM' 'jdk-7u79-linux-x64.tar.gz'
 
 #Download JDK1.8
-RUN perl gdown.pl 'https://docs.google.com/uc?export=download&id=0B-NEimEr29WdZkVlbF8wc1U3c0U' 'jdk-8u31-linux-x64.tar.gz'
+RUN perl gdown.pl 'https://docs.google.com/uc?export=download&id=0B-NEimEr29WdZkVlbF8wc1U3c0U' 'jdk-8u92-linux-x64.tar.gz'
 
 RUN mkdir /root/jdk
 
