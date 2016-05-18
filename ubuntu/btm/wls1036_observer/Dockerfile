@@ -4,7 +4,7 @@ MAINTAINER Henry Zhao (https://www.linkedin.com/in/dreamerhenry)
 
 USER root
 
-ENV PATH $PATH:/root/Oracle/Middleware/oracle_common/common/bin
+ENV PATH $PATH:/root/Oracle/Middleware/wlserver_10.3/common/bin:/root/Oracle/Middleware/user_projects/domains/base_domain/bin
 ENV CONFIG_JVM_ARGS '-Djava.security.egd=file:/dev/./urandom'
 
 #Download weblogic 10.3.6
