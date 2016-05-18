@@ -35,9 +35,9 @@ WORKDIR /
 #Download btm observer
 RUN perl gdown.pl 'https://docs.google.com/uc?export=download&id=0B-NEimEr29WdQXpWQ1pRMUE0Qmc' 'BTMObserver.zip'
 
-RUN unzip BTMObserver_Wls_10.3_Universal_12.1.0.7.7.zip -d /root/Oracle/Middleware/wlserver_10.3
+RUN unzip BTMObserver.zip -d /root/Oracle/Middleware/wlserver_10.3
 
-RUN rm BTMObserver_Wls_10.3_Universal_12.1.0.7.7.zip
+RUN rm BTMObserver.zip
 
 RUN sed -i 's/HOST/$BTM_HOST/' /root/Oracle/Middleware/wlserver_10.3/nanoagent/bin/nanoEnvWeblogic.sh && \
     sed -i 's/PORT/$BTM_PORT/' /root/Oracle/Middleware/wlserver_10.3/nanoagent/bin/nanoEnvWeblogic.sh && \
