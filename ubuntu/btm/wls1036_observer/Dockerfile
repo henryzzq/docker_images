@@ -29,6 +29,25 @@ WORKDIR /root/Oracle/Middleware
 
 RUN /root/Oracle/Middleware/wlserver_10.3/common/bin/wlst.sh -skipWLSModuleScanning /root/Oracle/create-wls-domain.py
 
+
+WORKDIR /
+
+#Download btm observer
+RUN perl gdown.pl 'https://docs.google.com/uc?export=download&id=0B-NEimEr29WdQXpWQ1pRMUE0Qmc' 'BTMObserver.zip'
+
+RUN unzip BTMObserver_Wls_10.3_Universal_12.1.0.7.7.zip -d /root/Oracle/Middleware/wlserver_10.3
+
+RUN rm BTMObserver_Wls_10.3_Universal_12.1.0.7.7.zip
+
+RUN sed -i 's/HOST/$BTM_HOST/' /root/Oracle/Middleware/wlserver_10.3/nanoagent/bin/nanoEnvWeblogic.sh && \
+    sed -i 's/PORT/$BTM_PORT/' /root/Oracle/Middleware/wlserver_10.3/nanoagent/bin/nanoEnvWeblogic.sh && \
+    sed -i 's/HOST/$BTM_HOST/' /root/Oracle/Middleware/wlserver_10.3/nanoagent/bin/nanoEnvWeblogic.cmd && \
+    sed -i 's/PORT/$BTM_PORT/' /root/Oracle/Middleware/wlserver_10.3/nanoagent/bin/nanoEnvWeblogic.cmd
+
+RUN echo 'echo BTMHOST=$BTM_HOST:$BTM_PORT' >> /root/.bashrc && \
+    echo 'source /root/Oracle/Middleware/user_projects/domains/base_domain/bin/setDomainEnv.sh' >> /root/.bashrc && \
+    echo 'source /root/Oracle/Middleware/wlserver_10.3/nanoagent/bin/nanoEnvWeblogic.sh' >> /root/.bashrc
+
 # Expose Node Manager default port, and also default http/https ports for admin console
 EXPOSE 7001 5556 8453
 
