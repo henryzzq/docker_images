@@ -16,7 +16,8 @@ RUN rm apache-tomcat-5.5.31.zip && \
     chmod +x /root/apache-tomcat-5.5.31/bin/*.sh
 
 RUN sed -i 's/JAVA_HOME=/JAVA_HOME=$JAVA_HOME/' /root/apache-tomcat-5.5.31/bin/startup.sh && \
-    sed -i 's/$CATALINA_HOME\/jre/$JAVA_HOME\/jre/' /root/apache-tomcat-5.5.31/bin/startup.sh
+    sed -i 's/$CATALINA_HOME\/jre/$JAVA_HOME\/jre/' /root/apache-tomcat-5.5.31/bin/startup.sh && \ 
+    sed -i 's/ start / run /' /root/apache-tomcat-5.5.31/bin/startup.sh
 
 # Expose Node Manager default port, and also default http/https ports for admin console
 EXPOSE 8080

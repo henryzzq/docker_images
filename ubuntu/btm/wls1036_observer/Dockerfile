@@ -48,6 +48,8 @@ RUN echo 'echo BTMHOST=$BTM_HOST:$BTM_PORT' >> /root/.bashrc && \
     echo 'source /root/Oracle/Middleware/user_projects/domains/base_domain/bin/setDomainEnv.sh' >> /root/.bashrc && \
     echo 'source /root/Oracle/Middleware/wlserver_10.3/nanoagent/bin/nanoEnvWeblogic.sh' >> /root/.bashrc
 
+RUN chmod +x /root/Oracle/Middleware/user_projects/domains/base_domain/bin/*.sh
+
 # Expose Node Manager default port, and also default http/https ports for admin console
 EXPOSE 7001 5556 8453
 
