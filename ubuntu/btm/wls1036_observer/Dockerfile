@@ -16,7 +16,7 @@ RUN wget --no-check-certificate 'https://docs.google.com/uc?export=download&id=0
 RUN mkdir /root/Oracle && \
     chmod a+xr /root/Oracle
 
-RUN /root/jdk/jdk1.6.0_45/bin/java -jar wls1036_generic.jar -mode=silent -silent_xml=/wls-silent.xml && \ 
+RUN /root/jdk/jdk1.6/bin/java -jar wls1036_generic.jar -mode=silent -silent_xml=/wls-silent.xml && \ 
 	rm /wls1036_generic.jar /wls-silent.xml 
 
 #Download create domain script
