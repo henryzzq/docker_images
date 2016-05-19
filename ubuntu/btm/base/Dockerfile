@@ -5,10 +5,10 @@ MAINTAINER Henry Zhao (https://www.linkedin.com/in/dreamerhenry)
 USER root
 
 #Package installed: vim wget unzip
-#JDK installed: 	JDK6
-ENV JAVA16_HOME /root/jdk/jdk1.6.0_45
-ENV JAVA17_HOME /root/jdk/jdk1.7.0_79
-ENV JAVA18_HOME /root/jdk/jdk1.8.0_92
+#JDK installed: 	JDK6,7,8
+ENV JAVA16_HOME /root/jdk/jdk1.6
+ENV JAVA17_HOME /root/jdk/jdk1.7
+ENV JAVA18_HOME /root/jdk/jdk1.8
 
 RUN apt-get update && \
     apt-get install -y wget vim unzip && \
