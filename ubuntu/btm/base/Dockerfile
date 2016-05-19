@@ -32,12 +32,14 @@ RUN chmod +x jdk-6u45-linux-x64.bin
 
 RUN ./jdk-6u45-linux-x64.bin && \
     rm jdk-6u45-linux-x64.bin && \
-    mv jdk1.6.0_45 /root/jdk
+    mv jdk1.6.0_45 /root/jdk/jdk1.6
 
 RUN tar -xzvf jdk-7u79-linux-x64.tar.gz -C /root/jdk && \
-    rm jdk-7u79-linux-x64.tar.gz
+    rm jdk-7u79-linux-x64.tar.gz && \
+    mv /root/jdk/jdk1.7.0_79 /root/jdk/jdk1.7
 
 RUN tar -xzvf jdk-8u92-linux-x64.tar.gz -C /root/jdk && \
-    rm jdk-8u92-linux-x64.tar.gz
+    rm jdk-8u92-linux-x64.tar.gz && \
+    mv /root/jdk/jdk1.8.0_92 /root/jdk/jdk1.8
     
 CMD ["bash"]
