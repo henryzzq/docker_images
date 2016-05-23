@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 echo '**********************************************'
 echo BTMHOST=$BTM_HOST:$BTM_PORT
