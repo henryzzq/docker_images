@@ -48,7 +48,7 @@ RUN echo 'echo BTMHOST=$BTM_HOST:$BTM_PORT' >> /root/.bashrc && \
     echo 'source /root/Oracle/Middleware/user_projects/domains/base_domain/bin/setDomainEnv.sh' >> /root/.bashrc && \
     echo 'source /root/Oracle/Middleware/wlserver_10.3/nanoagent/bin/nanoEnvWeblogic.sh' >> /root/.bashrc
 
-RUN wget --no-check-certificate 'https://docs.google.com/uc?export=download&id=0B-NEimEr29WdR0VmbmctQ01UanM' -O wlstarup.sh
+RUN wget --no-check-certificate 'https://docs.google.com/uc?export=download&id=0B-NEimEr29WdVUhSZEU2SjY3Ukk' -O wlstarup.sh
 
 RUN chmod +x /root/Oracle/Middleware/user_projects/domains/base_domain/bin/*.sh && \
     chmod +x /root/Oracle/Middleware/wlserver_10.3/nanoagent/bin/*.sh && \
