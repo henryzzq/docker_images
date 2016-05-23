@@ -12,7 +12,7 @@ ENV JAVA_HOME $JAVA16_HOME
 RUN perl gdown.pl 'https://docs.google.com/uc?export=download&id=0B-NEimEr29WdbURhaE16NElXbjA' 'wls1036_generic.jar'
 
 #Download silence mode script
-RUN wget --no-check-certificate 'https://docs.google.com/uc?export=download&id=0B-NEimEr29WdRXNoMndCMUllMGs' -O wls-silent.xml
+RUN wget --no-check-certificate 'https://docs.google.com/uc?export=download&id=0B-NEimEr29WdS0N5a1VOYVptZEE' -O wls-silent.xml
 
 RUN mkdir /root/Oracle && \
     chmod a+xr /root/Oracle
@@ -29,7 +29,6 @@ RUN mv create-wls-domain.py /root/Oracle && \
 WORKDIR /root/Oracle/Middleware
 
 RUN /root/Oracle/Middleware/wlserver_10.3/common/bin/wlst.sh -skipWLSModuleScanning /root/Oracle/create-wls-domain.py
-
 
 WORKDIR /
 
@@ -49,13 +48,13 @@ RUN echo 'echo BTMHOST=$BTM_HOST:$BTM_PORT' >> /root/.bashrc && \
     echo 'source /root/Oracle/Middleware/user_projects/domains/base_domain/bin/setDomainEnv.sh' >> /root/.bashrc && \
     echo 'source /root/Oracle/Middleware/wlserver_10.3/nanoagent/bin/nanoEnvWeblogic.sh' >> /root/.bashrc
 
-RUN wget --no-check-certificate 'https://docs.google.com/uc?export=download&id=0B-NEimEr29WdWmxkRFlrdDAwcWc' -O wlstratup.sh
+RUN wget --no-check-certificate 'https://docs.google.com/uc?export=download&id=0B-NEimEr29WdR0VmbmctQ01UanM' -O wlstarup.sh
 
 RUN chmod +x /root/Oracle/Middleware/user_projects/domains/base_domain/bin/*.sh && \
     chmod +x /root/Oracle/Middleware/wlserver_10.3/nanoagent/bin/*.sh && \
-    chmod +x /wlstratup.sh
+    chmod +x /wlstarup.sh
 
 # Expose Node Manager default port, and also default http/https ports for admin console
 EXPOSE 7001 5556 8453
 
-CMD ["/wlstratup.sh"]
+CMD ["/wlstarup.sh"]
