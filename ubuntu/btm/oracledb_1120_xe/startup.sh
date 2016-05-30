@@ -13,3 +13,5 @@ if [ "$ORACLE_ALLOW_REMOTE" = true ]; then
   export ORACLE_SID=XE
   echo "alter system disable restricted session;" | sqlplus -s SYSTEM/oracle
 fi
+
+/u01/app/oracle/product/11.2.0/xe/bin/sqlplus system/oracle

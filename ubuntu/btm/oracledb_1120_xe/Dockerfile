@@ -22,7 +22,7 @@ RUN wget --no-check-certificate 'https://docs.google.com/uc?export=download&id=0
 RUN wget --no-check-certificate 'https://docs.google.com/uc?export=download&id=0B-NEimEr29WdMk5uX19xMXQ1S2s' -O initXETemp.ora
 
 #Download startup.sh
-RUN wget --no-check-certificate 'https://docs.google.com/uc?export=download&id=0B-NEimEr29WdUmxHeGk0ZzhsTGs' -O startup.sh
+RUN wget --no-check-certificate 'https://docs.google.com/uc?export=download&id=0B-NEimEr29WdSHdMb0xwampNbXc' -O startup.sh
 
 RUN apt-get install -y libaio1 net-tools bc && \
     ln -s /usr/bin/awk /bin/awk && \
