@@ -8,6 +8,7 @@ ENV ORACLE_HOME /u01/app/oracle/product/11.2.0/xe
 ENV PATH $ORACLE_HOME/bin:$PATH
 ENV ORACLE_SID XE
 ENV ORACLE_ALLOW_REMOTE true
+ENV BTM_INIT_USERS true
 
 #Download oracle xe
 RUN perl gdown.pl 'https://docs.google.com/uc?export=download&id=0B-NEimEr29WdYnBHcWlxTXZMMjA' 'oracle-xe_11.2.0-1.0_amd64.deb'
@@ -22,7 +23,10 @@ RUN wget --no-check-certificate 'https://docs.google.com/uc?export=download&id=0
 RUN wget --no-check-certificate 'https://docs.google.com/uc?export=download&id=0B-NEimEr29WdcFVoTXcyZGRiODQ' -O initXETemp.ora
 
 #Download startup.sh
-RUN wget --no-check-certificate 'https://docs.google.com/uc?export=download&id=0B-NEimEr29WddWIxdTJVWnJ0M3M' -O startup.sh
+RUN wget --no-check-certificate 'https://docs.google.com/uc?export=download&id=0B-NEimEr29WddkFGc3V5aXJTdkE' -O startup.sh
+
+#Download btm sql script
+RUN wget --no-check-certificate 'https://docs.google.com/uc?export=download&id=0B-NEimEr29WdMjN6TGdZUkJGWjg' -O btm.sql
 
 RUN apt-get install -y libaio1 net-tools bc && \
     ln -s /usr/bin/awk /bin/awk && \
@@ -44,8 +48,7 @@ RUN printf 8080\\n1521\\noracle\\noracle\\ny\\n | /etc/init.d/oracle-xe configur
 
 RUN echo 'export ORACLE_HOME=/u01/app/oracle/product/11.2.0/xe' >> /etc/bash.bashrc && \
     echo 'export PATH=$ORACLE_HOME/bin:$PATH' >> /etc/bash.bashrc && \
-    echo 'export ORACLE_SID=XE' >> /etc/bash.bashrc && \
-    echo 'export ORACLE_ALLOW_REMOTE=true' >> /etc/bash.bashrc
+    echo 'export ORACLE_SID=XE' >> /etc/bash.bashrc
     
 RUN mv /startup.sh /usr/sbin/startup.sh && \
     chmod +x /usr/sbin/startup.sh && \
