@@ -13,16 +13,16 @@ ENV ORACLE_ALLOW_REMOTE true
 RUN perl gdown.pl 'https://docs.google.com/uc?export=download&id=0B-NEimEr29WdYnBHcWlxTXZMMjA' 'oracle-xe_11.2.0-1.0_amd64.deb'
 
 #Download chkconfig
-RUN wget --no-check-certificate 'https://docs.google.com/uc?export=download&id=0B-NEimEr29WdaGxOVEtvNzI3czA' -O chkconfig
+RUN wget --no-check-certificate 'https://docs.google.com/uc?export=download&id=0B-NEimEr29WdRlF5RVpKdXdCSTg' -O chkconfig
 
 #Download init.ora
-RUN wget --no-check-certificate 'https://docs.google.com/uc?export=download&id=0B-NEimEr29WdOFJrbWhzT2V5UnM' -O init.ora
+RUN wget --no-check-certificate 'https://docs.google.com/uc?export=download&id=0B-NEimEr29WdaEdBVlZ1ZGdLZWc' -O init.ora
 
 #Download initXETemp.ora
-RUN wget --no-check-certificate 'https://docs.google.com/uc?export=download&id=0B-NEimEr29WdMk5uX19xMXQ1S2s' -O initXETemp.ora
+RUN wget --no-check-certificate 'https://docs.google.com/uc?export=download&id=0B-NEimEr29WdcFVoTXcyZGRiODQ' -O initXETemp.ora
 
 #Download startup.sh
-RUN wget --no-check-certificate 'https://docs.google.com/uc?export=download&id=0B-NEimEr29WdSHdMb0xwampNbXc' -O startup.sh
+RUN wget --no-check-certificate 'https://docs.google.com/uc?export=download&id=0B-NEimEr29WddWIxdTJVWnJ0M3M' -O startup.sh
 
 RUN apt-get install -y libaio1 net-tools bc && \
     ln -s /usr/bin/awk /bin/awk && \
