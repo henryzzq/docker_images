@@ -26,7 +26,7 @@ RUN wget --no-check-certificate 'https://docs.google.com/uc?export=download&id=0
 RUN wget --no-check-certificate 'https://docs.google.com/uc?export=download&id=0B-NEimEr29WddkFGc3V5aXJTdkE' -O startup.sh
 
 #Download btm sql script
-RUN wget --no-check-certificate 'https://docs.google.com/uc?export=download&id=0B-NEimEr29WdMjN6TGdZUkJGWjg' -O btm.sql
+RUN wget --no-check-certificate 'https://docs.google.com/uc?export=download&id=0B-NEimEr29WdUDNxTkdhRjJqZ3M' -O btm.sql
 
 RUN apt-get install -y libaio1 net-tools bc && \
     ln -s /usr/bin/awk /bin/awk && \

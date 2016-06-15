@@ -1,3 +1,5 @@
+CREATE USER osb01 IDENTIFIED BY osb01;
+grant dba to osb01;
 CREATE USER sphere01 IDENTIFIED BY sphere01;
 grant dba to sphere01;
 CREATE USER transaction01 IDENTIFIED BY transaction01;

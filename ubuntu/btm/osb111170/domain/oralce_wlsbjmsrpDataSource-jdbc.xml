@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jdbc-data-source xmlns="http://xmlns.oracle.com/weblogic/jdbc-data-source">
+  <name>wlsbjmsrpDataSource</name>
+  <jdbc-driver-params>
+    <url>jdbc:oracle:thin:@dbhost:dbport:XE</url>
+    <driver-name>oracle.jdbc.OracleDriver</driver-name>
+    <properties>
+      <property>
+        <name>user</name>
+        <value>osb01</value>
+      </property>
+    </properties>
+    <password-encrypted>osb01</password-encrypted>
+    <use-xa-data-source-interface>false</use-xa-data-source-interface>
+  </jdbc-driver-params>
+  <jdbc-connection-pool-params>
+    <initial-capacity>5</initial-capacity>
+    <max-capacity>25</max-capacity>
+    <capacity-increment>1</capacity-increment>
+    <test-table-name>SQL SELECT 1 FROM DUAL</test-table-name>
+  </jdbc-connection-pool-params>
+  <jdbc-data-source-params>
+    <jndi-name>wlsbjmsrpDataSource</jndi-name>
+    <global-transactions-protocol>None</global-transactions-protocol>
+  </jdbc-data-source-params>
+</jdbc-data-source>

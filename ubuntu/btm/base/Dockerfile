@@ -28,6 +28,8 @@ RUN perl gdown.pl 'https://docs.google.com/uc?export=download&id=0B-NEimEr29WdZk
 
 RUN mkdir /root/jdk
 
+RUN mkdir -p /util
+
 RUN chmod +x jdk-6u45-linux-x64.bin
 
 RUN ./jdk-6u45-linux-x64.bin && \
